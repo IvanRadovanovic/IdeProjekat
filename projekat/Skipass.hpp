@@ -8,7 +8,7 @@ enum VrstaSkipassa {Obican, Casovi, Radnik};
 
 class Skipass{
 
-private:
+protected:
     Datum PocetakSP;
     Datum KrajSP;
     VrstaSkipassa VrstaPassa;

@@ -5,9 +5,8 @@
 #include "Skipass.hpp"
 using namespace std;
 
-class Instruktor{
-private:
-    Osoba InstruktorOsoba;
+class Instruktor:public Osoba{
+protected:
     Skipass InstruktorPass;
 
 

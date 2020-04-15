@@ -6,7 +6,7 @@ using namespace std;
 class Osoba
 {
 
-private:
+protected:
     string ime;
     string prezime;
 public:
@@ -34,7 +34,7 @@ public:
     void setPrezime(string y){
         ime=y;
     }
-    void Ispisi()const{
+    void JaSam()const{
         cout<<ime<<" "<<prezime<<endl;
     }
 

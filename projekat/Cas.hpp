@@ -11,10 +11,11 @@ using namespace std;
 
 class Cas{
 
-private:
+protected:
     Instruktor CasInstuktor;
-    Datum OdrzavanjeCasa;
+    Datum OdrzavanjeDan;
     Skijas Ucenik;
+    Vreme OdrzavanjeVreme;
 
 
 };

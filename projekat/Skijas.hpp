@@ -5,12 +5,13 @@ using namespace std;
 #include "Osoba.hpp"
 #include "Skipass.hpp"
 
-class Skijas{
+enum Oprema {Skijas, Border};
 
-private:
-    Osoba SkijasOsoba;
+class Skijas:public Osoba{
+
+protected:
     Skipass SkijasPass;
-
+    Oprema Vrsta;
 };
 
 #endif // SKIJAS_HPP_INCLUDED

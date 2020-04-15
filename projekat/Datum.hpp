@@ -5,7 +5,7 @@ using namespace std;
 
 class Datum
 {
-private:
+protected:
     int dan;
     int mesec;
     int godina;

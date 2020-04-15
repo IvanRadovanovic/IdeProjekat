@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
     Osoba lik("Ivan", "Radovanovic");
-    lik.Ispisi();
+    lik.JaSam();
     Datum abc;
     abc.Ispisi();
     return 0;

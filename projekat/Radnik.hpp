@@ -5,11 +5,11 @@ using namespace std;
 #include "Osoba.hpp"
 #include "Skipass.hpp"
 
-class Radnik{
+class Radnik:public Osoba{
 
-private:
-    Osoba zaposleniOsoba;
+protected:
     Skipass zaposleniPass;
+    Staza RadnoMesto;
 
 };
 

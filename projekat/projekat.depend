@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1585940971 source:c:\users\ivan\desktop\projekat\Èas.hpp
+
+1586030734 source:c:\users\ivan\desktop\projekat\main.cpp
+	<iostream>
+	"Datum.hpp"
+	"Instruktor.hpp"
+	"Osoba.hpp"
+	"Radnik.hpp"
+	"Skijaš.hpp"
+	"Staza.hpp"
+	"Èas.hpp"
+
+1585942239 c:\users\ivan\desktop\projekat\datum.hpp
+
+1586964630 c:\users\ivan\desktop\projekat\instruktor.hpp
+	"Osoba.hpp"
+	"Skipass.hpp"
+
+1585941480 c:\users\ivan\desktop\projekat\osoba.hpp
+
+1586964630 c:\users\ivan\desktop\projekat\radnik.hpp
+	"Osoba.hpp"
+	"Skipass.hpp"
+
+1585940971 c:\users\ivan\desktop\projekat\skijaš.hpp
+
+1585940971 c:\users\ivan\desktop\projekat\staza.hpp
+
+1585940971 c:\users\ivan\desktop\projekat\Èas.hpp
+
+1586964630 c:\users\ivan\desktop\projekat\skipass.hpp
+	"Datum.hpp"
+
