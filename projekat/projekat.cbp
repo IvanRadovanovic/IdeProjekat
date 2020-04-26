@@ -40,7 +40,7 @@
 		<Unit filename="Skijas.hpp" />
 		<Unit filename="Skipass.hpp" />
 		<Unit filename="Staza.hpp" />
-		<Unit filename="TežinaStaze.hpp" />
+		<Unit filename="TezinaStaze.hpp" />
 		<Unit filename="Vreme.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
