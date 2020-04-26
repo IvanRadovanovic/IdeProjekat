@@ -4,6 +4,7 @@
 using namespace std;
 #include "Osoba.hpp"
 #include "Skipass.hpp"
+#include "Staza.hpp"
 
 class Radnik:public Osoba{
 

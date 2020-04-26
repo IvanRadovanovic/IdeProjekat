@@ -7,6 +7,7 @@ using namespace std;
 #include "Instruktor.hpp"
 #include "Datum.hpp"
 #include "Skijas.hpp"
+#include "Vreme.hpp"
 
 
 class Cas{

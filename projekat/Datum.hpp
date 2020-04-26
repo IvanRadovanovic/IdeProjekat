@@ -88,6 +88,11 @@ public:
             cout<<"Greska u datumu"<<endl;
         }
     }
+    void setCelo(int dan1,int mesec1,int godina1){
+        dan=dan1;
+        mesec=mesec1;
+        godina=godina1;
+    }
     void Ispisi()const
     {
         cout<<dan<<"."<<mesec<<"."<<godina<<"."<<endl;

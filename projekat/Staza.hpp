@@ -2,9 +2,9 @@
 #define STAZA_HPP_INCLUDED
 
 using namespace std;
+#include "TezinaStaze.hpp"
 
-
-class Staza:public TežinaStaze{
+class Staza: public TezinaStaze{
 
 protected:
     string Naziv;
