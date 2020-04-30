@@ -2,6 +2,8 @@
 #define OSOBA_HPP_INCLUDED
 
 using namespace std;
+#include <iostream>
+#include "Cas.hpp"
 
 class Osoba
 {

@@ -1,28 +1,45 @@
 #ifndef CAS_HPP_INCLUDED
 #define CAS_HPP_INCLUDED
 
-using namespace std;
+#include <iostream>
 
-#include "Osoba.hpp"
 #include "Instruktor.hpp"
 #include "Datum.hpp"
-#include "Skijas.hpp"
 #include "Vreme.hpp"
 
 
-class Cas{
+class Cas
+{
 
 protected:
-    Osoba CasInstuktor;
+    int idINS;
     Datum OdrzavanjeDan;
-    Skijas Ucenik;
+    int idUCenik;
     Vreme OdrzavanjeVreme;
+    int idCasa;
+    static int BrojCasova;
 public:
-    Cas():CasInstuktor(),OdrzavanjeDan(),Ucenik(), OdrzavanjeVreme(){}
-    Cas(Osoba CI,Skijas UC, Datum OD,Vreme OV):CasInstuktor(CI),Ucenik(UC),OdrzavanjeDan(OD),OdrzavanjeVreme(OV){}
-    Cas(const Cas& a): CasInstuktor(a.CasInstuktor),OdrzavanjeDan(a.OdrzavanjeDan),Ucenik(a.Ucenik),OdrzavanjeVreme(a.OdrzavanjeVreme){}
-    void setOV(Vreme a){
+    Cas():OdrzavanjeDan(), OdrzavanjeVreme()
+    {
+        idCasa=BrojCasova;
+        BrojCasova++;
+    }
+    Cas(int INSID,int UCID, Datum OD,Vreme OV):idINS(INSID),idUCenik(UCID),OdrzavanjeDan(OD),OdrzavanjeVreme(OV)
+    {
+        idCasa=BrojCasova;
+        BrojCasova++;
+    }
+    Cas(const Cas& a): idINS(a.idINS),idUCenik(a.idUCenik),OdrzavanjeVreme(a.OdrzavanjeVreme)
+    {
+        idCasa=BrojCasova;
+        BrojCasova++;
+    }
+    void setOV(Vreme a)
+    {
         OdrzavanjeVreme=a;
+    }
+    void ispisiCas (Cas a)const{
+        cout<<"ID instruktora "<<idINS<<" ID ucenika "<<idUCenik<<" Datum "<<OdrzavanjeDan<<" Vreme "<<OdrzavanjeVreme<<endl;
     }
 
 
