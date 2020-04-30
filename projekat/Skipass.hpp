@@ -4,7 +4,7 @@
 using namespace std;
 
 #include "Datum.hpp"
-enum VrstaSkipassa {Obican, Casovi, Radnik};
+enum VrstaSkipassa {Obican, Casovi1, Radnik};
 
 class Skipass{
 
@@ -13,16 +13,11 @@ protected:
     Datum KrajSP;
     VrstaSkipassa VrstaPassa;
 public:
-    Skipass(){
+    Skipass():KrajSP(1,4,2021){
         VrstaPassa=Obican;
-        KrajSP.setCelo(1,4,2021);
     }
-    Skipass(int danP,int mesecP,int godinaP,int danK,int mesecK,int godinaK,VrstaSkipassa v){
-        PocetakSP.setCelo(danP,mesecP,godinaP);
-        KrajSP.setCelo(danK,mesecK,godinaK);
-        VrstaPassa=v;
-    }
-
+    Skipass(Datum PSP, Datum KSP, VrstaSkipassa v): PocetakSP(PSP), KrajSP(KSP), VrstaPassa(v){}
+    Skipass(const Skipass& a):PocetakSP(a.PocetakSP), KrajSP(a.KrajSP), VrstaPassa(a.VrstaPassa){}
 };
 
 #endif // SKIPASS_HPP_INCLUDED

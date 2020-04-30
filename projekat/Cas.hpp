@@ -13,10 +13,17 @@ using namespace std;
 class Cas{
 
 protected:
-    Instruktor CasInstuktor;
+    Osoba CasInstuktor;
     Datum OdrzavanjeDan;
     Skijas Ucenik;
     Vreme OdrzavanjeVreme;
+public:
+    Cas():CasInstuktor(),OdrzavanjeDan(),Ucenik(), OdrzavanjeVreme(){}
+    Cas(Osoba CI,Skijas UC, Datum OD,Vreme OV):CasInstuktor(CI),Ucenik(UC),OdrzavanjeDan(OD),OdrzavanjeVreme(OV){}
+    Cas(const Cas& a): CasInstuktor(a.CasInstuktor),OdrzavanjeDan(a.OdrzavanjeDan),Ucenik(a.Ucenik),OdrzavanjeVreme(a.OdrzavanjeVreme){}
+    void setOV(Vreme a){
+        OdrzavanjeVreme=a;
+    }
 
 
 };

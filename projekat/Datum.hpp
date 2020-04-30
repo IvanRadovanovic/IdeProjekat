@@ -43,6 +43,8 @@ public:
             cout<<"Greska u datumu"<<endl;
         }
     }
+    Datum(const Datum &a) : Datum(a.dan, a.mesec, a.godina){}
+
     int getDan()const
     {
         return dan;
@@ -87,11 +89,6 @@ public:
         {
             cout<<"Greska u datumu"<<endl;
         }
-    }
-    void setCelo(int dan1,int mesec1,int godina1){
-        dan=dan1;
-        mesec=mesec1;
-        godina=godina1;
     }
     void Ispisi()const
     {

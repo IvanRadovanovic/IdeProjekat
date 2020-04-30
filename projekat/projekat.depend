@@ -32,7 +32,7 @@
 1586964630 c:\users\ivan\desktop\projekat\skipass.hpp
 	"Datum.hpp"
 
-1586974477 source:c:\users\ivan\documents\github\ideprojekat\projekat\main.cpp
+1588228638 source:c:\users\ivan\documents\github\ideprojekat\projekat\main.cpp
 	<iostream>
 	"Datum.hpp"
 	"Instruktor.hpp"
@@ -42,30 +42,32 @@
 	"Staza.hpp"
 	"Cas.hpp"
 
-1587915728 c:\users\ivan\documents\github\ideprojekat\projekat\datum.hpp
+1588228966 c:\users\ivan\documents\github\ideprojekat\projekat\datum.hpp
 
-1586974448 c:\users\ivan\documents\github\ideprojekat\projekat\instruktor.hpp
+1588234888 c:\users\ivan\documents\github\ideprojekat\projekat\instruktor.hpp
+	<iostream>
 	"Osoba.hpp"
 	"Skipass.hpp"
+	"Cas.hpp"
 
-1586974448 c:\users\ivan\documents\github\ideprojekat\projekat\osoba.hpp
+1588228638 c:\users\ivan\documents\github\ideprojekat\projekat\osoba.hpp
 
-1587918251 c:\users\ivan\documents\github\ideprojekat\projekat\skipass.hpp
+1588230781 c:\users\ivan\documents\github\ideprojekat\projekat\skipass.hpp
 	"Datum.hpp"
 
-1587914106 c:\users\ivan\documents\github\ideprojekat\projekat\radnik.hpp
+1588228638 c:\users\ivan\documents\github\ideprojekat\projekat\radnik.hpp
 	"Osoba.hpp"
 	"Skipass.hpp"
 	"Staza.hpp"
 
-1587914335 c:\users\ivan\documents\github\ideprojekat\projekat\staza.hpp
+1588232766 c:\users\ivan\documents\github\ideprojekat\projekat\staza.hpp
 	"TezinaStaze.hpp"
 
-1587918321 c:\users\ivan\documents\github\ideprojekat\projekat\skijas.hpp
+1588229532 c:\users\ivan\documents\github\ideprojekat\projekat\skijas.hpp
 	"Osoba.hpp"
 	"Skipass.hpp"
 
-1587917715 c:\users\ivan\documents\github\ideprojekat\projekat\cas.hpp
+1588234845 c:\users\ivan\documents\github\ideprojekat\projekat\cas.hpp
 	"Osoba.hpp"
 	"Instruktor.hpp"
 	"Datum.hpp"
@@ -74,7 +76,7 @@
 
 1587914191 c:\users\ivan\documents\github\ideprojekat\projekat\težinastaze.hpp
 
-1587914328 c:\users\ivan\documents\github\ideprojekat\projekat\tezinastaze.hpp
+1588228638 c:\users\ivan\documents\github\ideprojekat\projekat\tezinastaze.hpp
 
-1587917715 c:\users\ivan\documents\github\ideprojekat\projekat\vreme.hpp
+1588233133 c:\users\ivan\documents\github\ideprojekat\projekat\vreme.hpp
 

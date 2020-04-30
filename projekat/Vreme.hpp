@@ -7,11 +7,17 @@ protected:
     int minut;
     int sat;
 public:
-    Vreme():sat(13), minut(0){}
+    Vreme(): minut(0), sat(12){}
 
-    vreme(int sat1, int minut1){
-        sat=sat1;
+    Vreme(int sat1, int minut1){
+
         minut=minut1;
+        sat=sat1;
+    }
+    Vreme(const Vreme& a): minut(a.minut),sat(a.sat){}
+    void setVreme(Vreme v){
+        minut=v.minut;
+        sat=v.sat;
     }
 };
 

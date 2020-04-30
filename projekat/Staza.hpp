@@ -4,11 +4,11 @@
 using namespace std;
 #include "TezinaStaze.hpp"
 
-class Staza: public TezinaStaze{
+class Staza{
 
 protected:
     string Naziv;
-
+    TezinaStaze TStaze;
 
 };
 #endif // STAZA_HPP_INCLUDED

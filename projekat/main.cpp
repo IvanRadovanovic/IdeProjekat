@@ -18,3 +18,4 @@ int main()
     abc.Ispisi();
     return 0;
 }
+/* Ideja mi je da napravim fukcionalnost zakazivanja casova kao i njihovog menjanja odtkazivanja izvršavanja itd.
