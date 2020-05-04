@@ -39,7 +39,7 @@ public:
     void IspisiSveInstruktorCasove (){
         cout<<ime<<" "<<prezime<<" Ukupan broj casova"<<broj<<endl;
         for(int i=0;i<broj;i++){
-            cout<<Casovi[i].ispisiCas();
+            Casovi[i].ispisiCas();
 
         }
 

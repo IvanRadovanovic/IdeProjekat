@@ -1,11 +1,11 @@
 #ifndef CAS_HPP_INCLUDED
 #define CAS_HPP_INCLUDED
 
-#include <iostream>
-
 #include "Instruktor.hpp"
 #include "Datum.hpp"
 #include "Vreme.hpp"
+#include <iostream>
+using namespace std;
 
 
 class Cas
@@ -38,8 +38,12 @@ public:
     {
         OdrzavanjeVreme=a;
     }
-    void ispisiCas (Cas a)const{
-        cout<<"ID instruktora "<<idINS<<" ID ucenika "<<idUCenik<<" Datum "<<OdrzavanjeDan<<" Vreme "<<OdrzavanjeVreme<<endl;
+    void ispisiCas ()const{
+        cout<<"ID instruktora "<<idINS<<" ID ucenika "<<idUCenik<<" Datum ";
+        OdrzavanjeDan.Ispisi();
+        cout<<" Vreme ";
+        OdrzavanjeVreme.Ispisi();
+        cout<<endl;
     }
 
 

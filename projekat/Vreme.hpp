@@ -19,6 +19,9 @@ public:
         minut=v.minut;
         sat=v.sat;
     }
+    void Ispisi ()const{
+        cout<<minut<<"|"<<sat<<"|";
+    }
 };
 
 #endif // VREME_HPP_INCLUDED
