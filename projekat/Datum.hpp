@@ -94,7 +94,19 @@ public:
     {
         cout<<dan<<"."<<mesec<<"."<<godina<<"."<<endl;
     }
-
+    friend ostream& operator<<(ostream& izlaz, const Datum& o);
 };
+ostream& operator<<(ostream& izlaz, const Datum& o){
 
+izlaz<<"Datum - ispis"<<endl;
+
+izlaz<<"Dan: "<<o.dan<<endl;
+
+izlaz<<"Mesec: "<<o.mesec<<endl;
+
+izlaz<<"Godina:"<<o.godina<<endl<<endl;
+
+return izlaz;
+
+}
 #endif // DATUM_HPP_INCLUDED

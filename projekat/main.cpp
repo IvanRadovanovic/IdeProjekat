@@ -26,7 +26,9 @@ void citajTxt()
         cout << "Neuspesno otvoren fajl";
 
 }
-
+int Instruktor::BrojINS=100;
+int Cas::BrojCasova=0;
+int Skijas::IDSkijas=100;
 int main()
 {
     citajTxt();

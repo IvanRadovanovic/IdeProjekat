@@ -45,8 +45,25 @@ public:
         OdrzavanjeVreme.Ispisi();
         cout<<endl;
     }
-
+    friend ostream& operator<<(ostream& izlaz, const Cas& o);
 
 };
+ostream& operator<<(ostream& izlaz, const Cas& o){
+
+izlaz<<"Èas - ispis"<<endl;
+
+izlaz<<"ID instruktora: "<<o.idINS<<endl;
+
+izlaz<<"ID Ucenika: "<<o.idUCenik<<endl;
+
+izlaz<<"Datum"<<o.OdrzavanjeDan<<endl;
+
+izlaz<<"Vreme"<<o.OdrzavanjeVreme<<endl;
+
+izlaz<<"Radni broj èasa"<<o.idCasa<<endl<<endl;
+
+return izlaz;
+
+}
 
 #endif // CAS_HPP_INCLUDED

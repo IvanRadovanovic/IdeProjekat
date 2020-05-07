@@ -22,6 +22,18 @@ public:
     void Ispisi ()const{
         cout<<minut<<"|"<<sat<<"|";
     }
+    friend ostream& operator<<(ostream& izlaz, const Vreme& o);
 };
 
+ostream& operator<<(ostream& izlaz, const Vreme& o){
+
+izlaz<<"Vreme - ispis"<<endl;
+
+izlaz<<"Sat: "<<o.sat<<endl;
+
+izlaz<<"Minut:"<<o.minut<<endl<<endl;
+
+return izlaz;
+
+}
 #endif // VREME_HPP_INCLUDED
