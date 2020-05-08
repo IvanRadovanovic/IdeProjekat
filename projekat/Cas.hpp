@@ -50,17 +50,19 @@ public:
 };
 ostream& operator<<(ostream& izlaz, const Cas& o){
 
-izlaz<<"Èas - ispis"<<endl;
+izlaz<<endl<<endl;
+
+izlaz<<"Cas - ispis"<<endl;
 
 izlaz<<"ID instruktora: "<<o.idINS<<endl;
 
 izlaz<<"ID Ucenika: "<<o.idUCenik<<endl;
 
-izlaz<<"Datum"<<o.OdrzavanjeDan<<endl;
+izlaz<<o.OdrzavanjeDan<<endl;
 
-izlaz<<"Vreme"<<o.OdrzavanjeVreme<<endl;
+izlaz<<o.OdrzavanjeVreme<<endl;
 
-izlaz<<"Radni broj èasa"<<o.idCasa<<endl<<endl;
+izlaz<<"Radni broj casa "<<o.idCasa<<endl<<endl;
 
 return izlaz;
 

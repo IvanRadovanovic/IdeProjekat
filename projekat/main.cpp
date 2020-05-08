@@ -26,13 +26,23 @@ void citajTxt()
         cout << "Neuspesno otvoren fajl";
 
 }
-int Instruktor::BrojINS=100;
-int Cas::BrojCasova=0;
-int Skijas::IDSkijas=100;
+int Instruktor::BrojINS=0;
+int Cas::BrojCasova=100;
+int Skijas::BrojSkijasa=0;
 int main()
 {
     citajTxt();
-    Osoba lik("Ivan", "Radovanovic");
+    Osoba i("Mirouljub","Petrovic");
+    Osoba u("Nikola","Petrusic");
+    Instruktor inst(i);
+    Skijas s;
+    s.setIme(u.getIme());
+    s.setPrezime(u.getPrezime());
+    Datum d(6,1,2021);
+    Vreme v(14,30);
+    Cas c(inst.getIDINS(),s.getID(),d,v);
+    cout<<c<<endl;
+
     return 0;
 }
 /* Ideja mi je da napravim fukcionalnost zakazivanja casova kao i njihovog menjanja odtkazivanja izvršavanja itd.*/
