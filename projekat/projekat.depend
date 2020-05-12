@@ -32,7 +32,7 @@
 1586964630 c:\users\ivan\desktop\projekat\skipass.hpp
 	"Datum.hpp"
 
-1588945633 source:c:\users\ivan\documents\github\ideprojekat\projekat\main.cpp
+1588945774 source:c:\users\ivan\documents\github\ideprojekat\projekat\main.cpp
 	<iostream>
 	"Datum.hpp"
 	"Instruktor.hpp"
@@ -71,7 +71,7 @@
 	"Osoba.hpp"
 	"Skipass.hpp"
 
-1588945520 c:\users\ivan\documents\github\ideprojekat\projekat\cas.hpp
+1589286218 c:\users\ivan\documents\github\ideprojekat\projekat\cas.hpp
 	"Instruktor.hpp"
 	"Datum.hpp"
 	"Vreme.hpp"

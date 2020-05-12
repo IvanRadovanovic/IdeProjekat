@@ -17,6 +17,7 @@ protected:
     int idUCenik;
     Vreme OdrzavanjeVreme;
     int idCasa;
+    static int BrojCasova;
 public:
     Cas():OdrzavanjeDan(), OdrzavanjeVreme()
     {
