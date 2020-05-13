@@ -4,7 +4,8 @@
 using namespace std;
 #include "TezinaStaze.hpp"
 
-class Staza{
+class Staza
+{
 
 protected:
     string Naziv;

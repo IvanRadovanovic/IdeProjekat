@@ -6,7 +6,8 @@ using namespace std;
 #include "Skipass.hpp"
 #include "Staza.hpp"
 
-class Radnik:public Osoba{
+class Radnik:public Osoba
+{
 
 protected:
     Skipass zaposleniPass;

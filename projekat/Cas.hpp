@@ -34,11 +34,13 @@ public:
         idCasa=BrojCasova;
         BrojCasova++;
     }
+    ~Cas(){}
     void setOV(Vreme a)
     {
         OdrzavanjeVreme=a;
     }
-    void ispisiCas ()const{
+    void ispisiCas ()const
+    {
         cout<<"ID instruktora "<<idINS<<" ID ucenika "<<idUCenik<<" Datum ";
         OdrzavanjeDan.Ispisi();
         cout<<" Vreme ";
@@ -48,23 +50,24 @@ public:
     friend ostream& operator<<(ostream& izlaz, const Cas& o);
 
 };
-ostream& operator<<(ostream& izlaz, const Cas& o){
+ostream& operator<<(ostream& izlaz, const Cas& o)
+{
 
-izlaz<<endl<<endl;
+    izlaz<<endl<<endl;
 
-izlaz<<"Cas - ispis"<<endl;
+    izlaz<<"Cas - ispis"<<endl;
 
-izlaz<<"ID instruktora: "<<o.idINS<<endl;
+    izlaz<<"ID instruktora: "<<o.idINS<<endl;
 
-izlaz<<"ID Ucenika: "<<o.idUCenik<<endl;
+    izlaz<<"ID Ucenika: "<<o.idUCenik<<endl;
 
-izlaz<<o.OdrzavanjeDan<<endl;
+    izlaz<<o.OdrzavanjeDan<<endl;
 
-izlaz<<o.OdrzavanjeVreme<<endl;
+    izlaz<<o.OdrzavanjeVreme<<endl;
 
-izlaz<<"Radni broj casa "<<o.idCasa<<endl<<endl;
+    izlaz<<"Radni broj casa "<<o.idCasa<<endl<<endl;
 
-return izlaz;
+    return izlaz;
 
 }
 

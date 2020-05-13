@@ -5,7 +5,8 @@ using namespace std;
 
 enum BojaStaze {Zelena, Plava, Zuta, Crvena};
 
-class TezinaStaze {
+class TezinaStaze
+{
 protected:
     BojaStaze Boja1;
     int Duzina;

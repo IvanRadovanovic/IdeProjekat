@@ -18,12 +18,12 @@ public:
     }
     Datum(int dan1, int mesec1,int godina1)
     {
-            dan=dan1;
-            mesec=mesec1;
-            godina=godina1;
+        dan=dan1;
+        mesec=mesec1;
+        godina=godina1;
 
     }
-    Datum(const Datum &a) : Datum(a.dan, a.mesec, a.godina){}
+    Datum(const Datum &a) : Datum(a.dan, a.mesec, a.godina) {}
 
     int getDan()const
     {
@@ -76,17 +76,18 @@ public:
     }
     friend ostream& operator<<(ostream& izlaz, const Datum& o);
 };
-ostream& operator<<(ostream& izlaz, const Datum& o){
+ostream& operator<<(ostream& izlaz, const Datum& o)
+{
 
-izlaz<<"Datum - ispis"<<endl;
+    izlaz<<"Datum - ispis"<<endl;
 
-izlaz<<"Dan: "<<o.dan<<endl;
+    izlaz<<"Dan: "<<o.dan<<endl;
 
-izlaz<<"Mesec: "<<o.mesec<<endl;
+    izlaz<<"Mesec: "<<o.mesec<<endl;
 
-izlaz<<"Godina:"<<o.godina<<endl<<endl;
+    izlaz<<"Godina:"<<o.godina<<endl<<endl;
 
-return izlaz;
+    return izlaz;
 
 }
 #endif // DATUM_HPP_INCLUDED

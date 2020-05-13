@@ -30,13 +30,16 @@ public:
     {
         return prezime;
     }
-    void setIme(string x){
+    void setIme(string x)
+    {
         ime=x;
     }
-    void setPrezime(string y){
+    void setPrezime(string y)
+    {
         ime=y;
     }
-    void JaSam()const{
+    void JaSam()const
+    {
         cout<<ime<<" "<<prezime<<endl;
     }
 
