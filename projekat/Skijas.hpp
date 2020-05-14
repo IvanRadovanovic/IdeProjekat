@@ -4,6 +4,7 @@
 using namespace std;
 #include "Osoba.hpp"
 #include "Skipass.hpp"
+#include <vector>
 
 
 enum Oprema {Skijas2, Border};
@@ -17,9 +18,9 @@ protected:
     vector<Cas> SkiCas;
     int brojCas;
     int IDS;
-    static int BrojSkijasa;
 
 public:
+    static int BrojSkijasa;
 
     Skijas():Osoba(), SkijasPass(), Vrsta(Skijas2)
     {
@@ -27,7 +28,7 @@ public:
         IDS=BrojSkijasa;
         BrojSkijasa++;
     }
-    Skijas(string ime1, string prezime1,Datum PSP, Datum KSP,VrstaSkipassa v, Oprema o1):Osoba(ime1, prezime1), SkijasPass(PSP,KSP,v), Vrsta(o1)
+    Skijas(string ime1, string prezime1,Datum PSP, Datum KSP, Oprema o1):Osoba(ime1, prezime1), SkijasPass(PSP,KSP), Vrsta(o1)
     {
         brojCas=0;
         IDS=BrojSkijasa;
@@ -38,7 +39,6 @@ public:
     {
         brojCas=0;
         IDS=BrojSkijasa;
-        BrojSkijasa++;
     }
     int getID ()
     {
@@ -49,9 +49,10 @@ public:
         SkiCas.push_back(a);
         brojCas++;
     }
-    void IspisiSveSkijasCasove ()
+    void JaSam()
     {
-        cout<<ime<<" "<<prezime<<" Ukupan broj casova"<<brojCas<<endl;
+        Osoba::JaSam();
+        cout<<" Ukupan broj casova"<<brojCas<<endl;
         for(auto ik=SkiCas.begin(); ik!=SkiCas.end(); ik++)
         {
             cout<<*ik<<endl;

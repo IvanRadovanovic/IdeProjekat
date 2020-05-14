@@ -17,8 +17,8 @@ protected:
     int idUCenik;
     Vreme OdrzavanjeVreme;
     int idCasa;
-    static int BrojCasova;
 public:
+    static int BrojCasova;
     Cas():OdrzavanjeDan(), OdrzavanjeVreme()
     {
         idCasa=BrojCasova;
@@ -32,7 +32,6 @@ public:
     Cas(const Cas& a): idINS(a.idINS),idUCenik(a.idUCenik),OdrzavanjeVreme(a.OdrzavanjeVreme)
     {
         idCasa=BrojCasova;
-        BrojCasova++;
     }
     ~Cas(){}
     void setOV(Vreme a)

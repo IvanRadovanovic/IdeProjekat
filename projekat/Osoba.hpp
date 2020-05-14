@@ -38,9 +38,9 @@ public:
     {
         ime=y;
     }
-    void JaSam()const
+    virtual void JaSam()const
     {
-        cout<<ime<<" "<<prezime<<endl;
+        cout<<"Moje ime je: "<<ime<<" "<<prezime<<endl;
     }
 
 

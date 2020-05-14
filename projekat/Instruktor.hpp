@@ -2,6 +2,7 @@
 #define INSTRUKTOR_HPP_INCLUDED
 #include "Osoba.hpp"
 #include "Skipass.hpp"
+#include "Skijas.hpp"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -14,8 +15,8 @@ protected:
     vector<Cas> InsCasovi;
     int broj;
     int IDinstruktora;
-    static int BrojINS;
 public:
+    static int BrojINS;
     Instruktor():Osoba()
     {
         broj=0;
@@ -34,9 +35,10 @@ public:
         IDinstruktora=BrojINS;
         BrojINS++;
     }
-    void NoviCas(int INS,int UC,Datum OD,Vreme OV)
+    void NoviCas(Instruktor &INS,Skijas &UC,Datum &OD,Vreme &OV)
     {
-        Cas c(INS,UC,OD,OV);
+        Cas c(INS.getIDINS(),UC.getID(),OD,OV);
+        UC.ZakazivanjeCasa(c);
         InsCasovi.push_back(c);
         broj++;
     }
@@ -51,12 +53,14 @@ public:
     {
         return IDinstruktora;
     }
-    void IspisiSveInstruktorCasove ()
+    void JaSam()
     {
-        cout<<ime<<" "<<prezime<<" Ukupan broj casova"<<broj<<endl;
+        Osoba::JaSam();
+        cout<<"i ukupan broj casova mi je:"<<broj<<endl;
         for(auto ik=InsCasovi.begin(); ik!=InsCasovi.end(); ik++)
         {
             cout<<*ik<<endl;
+            cout<<endl<<endl<<"-------------------------------------------"<<endl<<endl<<endl;
         }
 
     }
