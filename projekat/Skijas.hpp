@@ -40,6 +40,14 @@ public:
         brojCas=0;
         IDS=BrojSkijasa;
     }
+    string getIme()const
+    {
+        return ime;
+    }
+    string getPrezime()const
+    {
+        return prezime;
+    }
     int getID ()
     {
         return IDS;
@@ -53,14 +61,30 @@ public:
     {
         Osoba::JaSam();
         cout<<" Ukupan broj casova"<<brojCas<<endl;
+        cout<<"-------------------------"<<endl<<endl;
+    }
+    void Mojicasovi()
+    {
         for(auto ik=SkiCas.begin(); ik!=SkiCas.end(); ik++)
         {
             cout<<*ik<<endl;
         }
 
     }
+friend ostream& operator<<(ostream& izlaz, const Skijas& o);
 
 };
+ostream& operator<<(ostream& izlaz, const Skijas& o)
+{
 
+    izlaz<<endl<<endl;
+
+    cout<<"Redni broj "<<o.IDS<<endl<<"Moje ime je: "<<o.ime<<" "<<o.prezime<<endl;
+    cout<<"i ukupan broj casova mi je:"<<o.brojCas<<endl;
+    cout<<endl<<"---------------------------"<<endl<<endl;
+
+    return izlaz;
+
+}
 #endif // SKIJAS_HPP_INCLUDED
 

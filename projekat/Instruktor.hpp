@@ -17,19 +17,19 @@ protected:
     int IDinstruktora;
 public:
     static int BrojINS;
-    Instruktor():Osoba()
+    Instruktor():Osoba(),InstruktorPass()
     {
         broj=0;
         IDinstruktora=BrojINS;
         BrojINS++;
     }
-    Instruktor(Osoba o):Osoba(o)
+    Instruktor(Osoba o):Osoba(o),InstruktorPass()
     {
         broj=0;
         IDinstruktora=BrojINS;
         BrojINS++;
     }
-    Instruktor(string ime1,string prezime1): Osoba(ime1, prezime1)
+    Instruktor(string ime1,string prezime1,Datum PSP, Datum KSP): Osoba(ime1, prezime1), InstruktorPass(PSP,KSP)
     {
         broj=0;
         IDinstruktora=BrojINS;
@@ -57,14 +57,31 @@ public:
     {
         Osoba::JaSam();
         cout<<"i ukupan broj casova mi je:"<<broj<<endl;
+    }
+    void Mojicasovi()
+    {
         for(auto ik=InsCasovi.begin(); ik!=InsCasovi.end(); ik++)
         {
             cout<<*ik<<endl;
-            cout<<endl<<endl<<"-------------------------------------------"<<endl<<endl<<endl;
         }
 
     }
 
 
+
+friend ostream& operator<<(ostream& izlaz, const Instruktor& o);
+
 };
+ostream& operator<<(ostream& izlaz, const Instruktor& o)
+{
+
+    izlaz<<endl<<endl;
+
+    cout<<"Redni broj "<<o.IDinstruktora<<endl<<"Moje ime je: "<<o.ime<<" "<<o.prezime<<endl;
+    cout<<"i ukupan broj casova mi je:"<<o.broj<<endl;
+    cout<<endl<<"---------------------------"<<endl<<endl;
+
+    return izlaz;
+
+}
 #endif // INSTRUKTOR_HPP_INCLUDED
