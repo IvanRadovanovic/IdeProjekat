@@ -33,7 +33,7 @@ public:
     {
         idCasa=BrojCasova;
     }
-    ~Cas(){}
+    ~Cas(){BrojCasova--;}
     void setOV(Vreme a)
     {
         OdrzavanjeVreme=a;

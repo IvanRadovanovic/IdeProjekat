@@ -40,6 +40,7 @@ public:
         brojCas=0;
         IDS=BrojSkijasa;
     }
+    ~Skijas(){BrojSkijasa--;}
     string getIme()const
     {
         return ime;
@@ -80,7 +81,7 @@ ostream& operator<<(ostream& izlaz, const Skijas& o)
     izlaz<<endl<<endl;
 
     cout<<"Redni broj "<<o.IDS<<endl<<"Moje ime je: "<<o.ime<<" "<<o.prezime<<endl;
-    cout<<"i ukupan broj casova mi je:"<<o.brojCas<<endl;
+    cout<<"i ukupan broj casova mi je: "<<o.brojCas<<endl;
     cout<<endl<<"---------------------------"<<endl<<endl;
 
     return izlaz;

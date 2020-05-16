@@ -132,7 +132,7 @@ int main()
             for(auto ik=SviSkijasi.begin(); ik!=SviSkijasi.end(); ik++)
             {
                 cout<<endl<<endl<<endl<<endl<<endl;
-                cout<<*ik<<endl;
+                ik->JaSam();
             }
         }
         if(k==4)
@@ -141,7 +141,7 @@ int main()
             for(auto ik=SviInstruktori.begin(); ik!=SviInstruktori.end(); ik++)
             {
                 cout<<endl;
-                cout<<*ik<<endl;
+                ik->JaSam();
             }
         }
         if(k==5)
