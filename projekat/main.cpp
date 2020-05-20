@@ -98,6 +98,7 @@ int main()
     inst.JaSam();
     vector<Instruktor> SviInstruktori;
     vector<Skijas> SviSkijasi;
+    vector<Osoba> SveOsobe;
     SviSkijasi.push_back(s);
     SviInstruktori.push_back(inst);
     int k;
@@ -112,6 +113,7 @@ int main()
         cout<<"Da ispisete sve instrktore unesite 4"<<endl;
         cout<<"Da izbrisete skijasa unesite 5"<<endl;
         cout<<"Da izbrisete instruktora unesite 6"<<endl;
+        cout<<"Da napravite novi cas unesite 7"<<endl;
 
 
 
@@ -175,6 +177,31 @@ int main()
 
             }
             system("cls");
+        }
+        if(k==7)
+        {
+            system("cls");
+            cout<<"Unesite ime skijasa koji zeli da doda cas"<<endl;
+            string a,b;
+            cin>>a;
+            cout<<"Unesite ime instruktora koji ce da odrzi cas"<<endl;
+            cin>>b;
+
+            for(auto ik=SviSkijasi.begin(); ik!=SviSkijasi.end(); ik++)
+            {
+                if((*ik).getIme()==a)
+                {
+                    break;
+                }
+
+            }
+            for(auto ip=SviInstruktori.begin(); ip!=SviInstruktori.end(); ip++)
+            {
+                if((*ip).getIme()==b)
+                {
+                    break;
+                }
+            }
         }
 
 
