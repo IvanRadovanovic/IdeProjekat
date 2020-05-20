@@ -58,7 +58,7 @@ public:
         Osoba::JaSam();
         cout<<"i ukupan broj casova mi je:"<<broj<<endl;
     }
-    void Mojicasovi()
+    void MojiCasovi()
     {
         for(auto ik=InsCasovi.begin(); ik!=InsCasovi.end(); ik++)
         {

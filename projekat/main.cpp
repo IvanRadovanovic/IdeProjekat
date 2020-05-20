@@ -77,6 +77,23 @@ Instruktor DodajIntrukora ()
     return i;
 
 }
+bool NoviCas (Instruktor i1,Skijas u1)
+{
+    int d,m,g;
+    cout<<"Unesite vreme odrzavanja casa"<<endl;
+    cin>>d;
+    cin>>m;
+    Vreme V(d,m);
+    cout<<"Unesite dan, mesec i godinu odrzavanja casa"<<endl;
+    cin>>d;
+    cin>>m;
+    cin>>g;
+    Datum D(d,m,g);
+
+    i1.NoviCas(i1,u1,D,V);
+
+
+}
 
 
 
@@ -98,7 +115,6 @@ int main()
     inst.JaSam();
     vector<Instruktor> SviInstruktori;
     vector<Skijas> SviSkijasi;
-    vector<Osoba> SveOsobe;
     SviSkijasi.push_back(s);
     SviInstruktori.push_back(inst);
     int k;
@@ -113,7 +129,7 @@ int main()
         cout<<"Da ispisete sve instrktore unesite 4"<<endl;
         cout<<"Da izbrisete skijasa unesite 5"<<endl;
         cout<<"Da izbrisete instruktora unesite 6"<<endl;
-        cout<<"Da napravite novi cas unesite 7"<<endl;
+        cout<<"Da uðete u cas meni unesite 7"<<endl;
 
 
 
@@ -152,7 +168,7 @@ int main()
             cin>>a;
             for(auto ik=SviSkijasi.begin(); ik!=SviSkijasi.end(); ik++)
             {
-                if((*ik).getIme()==a)
+                if(ik->getIme()==a)
                 {
                     SviSkijasi.erase(ik);
                     Skijas::BrojSkijasa--;
@@ -168,7 +184,7 @@ int main()
             cin>>a;
             for(auto ik=SviInstruktori.begin(); ik!=SviInstruktori.end(); ik++)
             {
-                if((*ik).getIme()==a)
+                if(ik->getIme()==a)
                 {
                     SviInstruktori.erase(ik);
                     Instruktor::BrojINS--;
@@ -180,28 +196,45 @@ int main()
         }
         if(k==7)
         {
-            system("cls");
-            cout<<"Unesite ime skijasa koji zeli da doda cas"<<endl;
-            string a,b;
-            cin>>a;
-            cout<<"Unesite ime instruktora koji ce da odrzi cas"<<endl;
-            cin>>b;
 
-            for(auto ik=SviSkijasi.begin(); ik!=SviSkijasi.end(); ik++)
-            {
-                if((*ik).getIme()==a)
-                {
-                    break;
-                }
 
-            }
-            for(auto ip=SviInstruktori.begin(); ip!=SviInstruktori.end(); ip++)
+            do
             {
-                if((*ip).getIme()==b)
+                cout<<"Da dodate novi cas 1"<<endl;
+
+
+                cin>>k;
+                if(k==1)
                 {
-                    break;
+
+                    system("cls");
+                    cout<<"Unesite ime skijasa koji zeli da doda cas"<<endl;
+                    string a,b;
+                    cin>>a;
+                    cout<<"Unesite ime instruktora koji ce da odrzi cas"<<endl;
+                    cin>>b;
+
+                    auto ik=SviSkijasi.begin();
+                    for(ik=SviSkijasi.begin(); ik!=SviSkijasi.end(); ik++)
+                    {
+                        if(ik->getIme()==a)
+                        {
+                            break;
+                        }
+
+                    }
+                    auto ip=SviInstruktori.begin();
+                    for(ip=SviInstruktori.begin(); ip!=SviInstruktori.end(); ip++)
+                    {
+                        if(ip->getIme()==b)
+                        {
+                            break;
+                        }
+                    }
+                    NoviCas(*ip,*ik);
                 }
             }
+            while(k!=0);
         }
 
 
@@ -210,4 +243,3 @@ int main()
 
     return 0;
 }
-/* Ideja mi je da napravim fukcionalnost zakazivanja casova kao i njihovog menjanja odtkazivanja izvršavanja itd.*/
