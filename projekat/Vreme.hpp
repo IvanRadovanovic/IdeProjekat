@@ -24,7 +24,7 @@ public:
     }
     void Ispisi ()const
     {
-        cout<<minut<<"|"<<sat<<"|";
+        cout<<sat<<"|"<<minut<<"|";
     }
     friend ostream& operator<<(ostream& izlaz, const Vreme& o);
 };

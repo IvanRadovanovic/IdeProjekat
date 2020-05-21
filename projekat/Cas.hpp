@@ -46,6 +46,9 @@ public:
         OdrzavanjeVreme.Ispisi();
         cout<<endl;
     }
+    int getIDinstukotra (){return idINS;}
+    int getIDskijasa (){return idUCenik;}
+    Vreme getVreme (){return OdrzavanjeVreme;}
     friend ostream& operator<<(ostream& izlaz, const Cas& o);
 
 };

@@ -18,9 +18,8 @@ protected:
     vector<Cas> SkiCas;
     int brojCas;
     int IDS;
-
-public:
     static int BrojSkijasa;
+public:
 
     Skijas():Osoba(), SkijasPass(), Vrsta(Skijas2)
     {
@@ -31,7 +30,9 @@ public:
     Skijas(string ime1, string prezime1,Datum PSP, Datum KSP, Oprema o1):Osoba(ime1, prezime1), SkijasPass(PSP,KSP), Vrsta(o1)
     {
         brojCas=0;
+        cout<<"Pravim novog skijasa i trenutno je staticko polje "<<BrojSkijasa<<endl;
         IDS=BrojSkijasa;
+        cout<<"Pravim novog skijasa i trenutno je IDS "<<IDS<<endl;
         BrojSkijasa++;
 
     }
@@ -45,6 +46,7 @@ public:
     {
         return ime;
     }
+    static int getBrojSkijasa(){return BrojSkijasa;}
     string getPrezime()const
     {
         return prezime;
@@ -61,6 +63,7 @@ public:
     void JaSam()
     {
         Osoba::JaSam();
+        cout<<"Moj id je "<<IDS;
         cout<<" Ukupan broj casova"<<brojCas<<endl;
         cout<<"-------------------------"<<endl<<endl;
     }

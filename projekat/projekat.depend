@@ -32,7 +32,7 @@
 1586964630 c:\users\ivan\desktop\projekat\skipass.hpp
 	"Datum.hpp"
 
-1589612759 source:c:\users\ivan\documents\github\ideprojekat\projekat\main.cpp
+1590100230 source:c:\users\ivan\documents\github\ideprojekat\projekat\main.cpp
 	<iostream>
 	"Datum.hpp"
 	"Instruktor.hpp"
@@ -47,14 +47,14 @@
 
 1589392046 c:\users\ivan\documents\github\ideprojekat\projekat\datum.hpp
 
-1589801518 c:\users\ivan\documents\github\ideprojekat\projekat\instruktor.hpp
+1590096478 c:\users\ivan\documents\github\ideprojekat\projekat\instruktor.hpp
 	"Osoba.hpp"
 	"Skipass.hpp"
 	"Skijas.hpp"
 	<iostream>
 	<vector>
 
-1589801518 c:\users\ivan\documents\github\ideprojekat\projekat\osoba.hpp
+1589985271 c:\users\ivan\documents\github\ideprojekat\projekat\osoba.hpp
 	<iostream>
 	"Cas.hpp"
 
@@ -69,13 +69,13 @@
 1589392046 c:\users\ivan\documents\github\ideprojekat\projekat\staza.hpp
 	"TezinaStaze.hpp"
 
-1589801518 c:\users\ivan\documents\github\ideprojekat\projekat\skijas.hpp
+1590100641 c:\users\ivan\documents\github\ideprojekat\projekat\skijas.hpp
 	<iostream>
 	"Osoba.hpp"
 	"Skipass.hpp"
 	<vector>
 
-1589613049 c:\users\ivan\documents\github\ideprojekat\projekat\cas.hpp
+1590095129 c:\users\ivan\documents\github\ideprojekat\projekat\cas.hpp
 	"Instruktor.hpp"
 	"Datum.hpp"
 	"Vreme.hpp"
@@ -85,5 +85,5 @@
 
 1589392046 c:\users\ivan\documents\github\ideprojekat\projekat\tezinastaze.hpp
 
-1589392046 c:\users\ivan\documents\github\ideprojekat\projekat\vreme.hpp
+1590095439 c:\users\ivan\documents\github\ideprojekat\projekat\vreme.hpp
 

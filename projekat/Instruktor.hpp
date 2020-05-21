@@ -35,12 +35,14 @@ public:
         IDinstruktora=BrojINS;
         BrojINS++;
     }
-    void NoviCas(Instruktor &INS,Skijas &UC,Datum &OD,Vreme &OV)
+    Cas NoviCas(Instruktor &INS,Skijas &UC,Datum &OD,Vreme &OV)
     {
         Cas c(INS.getIDINS(),UC.getID(),OD,OV);
         UC.ZakazivanjeCasa(c);
         InsCasovi.push_back(c);
         broj++;
+        cout<<"Ovde se pravi novi cas XXX"<<INS.getIDINS()<<"  "<<UC.getID()<<"////////"<<endl;
+        return c;
     }
     void PromeniVremeCasa(Vreme& v)
     {

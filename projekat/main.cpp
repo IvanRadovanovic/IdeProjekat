@@ -50,7 +50,7 @@ Skijas DodajSkijasa ()
     Datum b(d,m,g);
     cout<<"Unesite da li je skijas ili border(0 ukoliko je skijas i 1 ukoliko je border)"<<endl;
     cin>>o1;
-    Skijas s(ime1,prezime1,a,b,Skijas2); //pitaj Olju
+    Skijas s(ime1,prezime1,a,b,Skijas2);
     return s;
 
 }
@@ -77,7 +77,7 @@ Instruktor DodajIntrukora ()
     return i;
 
 }
-bool NoviCas (Instruktor i1,Skijas u1)
+Cas NoviCas (Instruktor i1,Skijas u1)
 {
     int d,m,g;
     cout<<"Unesite vreme odrzavanja casa"<<endl;
@@ -90,7 +90,7 @@ bool NoviCas (Instruktor i1,Skijas u1)
     cin>>g;
     Datum D(d,m,g);
 
-    i1.NoviCas(i1,u1,D,V);
+    return  i1.NoviCas(i1,u1,D,V);
 
 
 }
@@ -100,36 +100,37 @@ bool NoviCas (Instruktor i1,Skijas u1)
 int Instruktor::BrojINS=0;
 int Cas::BrojCasova=0;
 int Skijas::BrojSkijasa=0;
+
 int main()
 {
-    citajTxt();
-    Osoba i("Mirouljub","Petrovic");
-    Osoba u("Nikola","Petrusic");
+    //citajTxt();
+    Osoba i("Miroljub","Petrovic");
     Instruktor inst(i);
-    Skijas s;
-    s.setIme(u.getIme());
-    s.setPrezime(u.getPrezime());
     Datum d(6,1,2021);
     Vreme v(14,30);
-    inst.NoviCas(inst,s,d,v);
-    inst.JaSam();
+
     vector<Instruktor> SviInstruktori;
     vector<Skijas> SviSkijasi;
-    SviSkijasi.push_back(s);
+    vector<Cas> SviCasovi;
+    Skijas z("Ivan","Radovanovic",d,d,Skijas2);
+    SviSkijasi.push_back(z);
     SviInstruktori.push_back(inst);
     int k;
     do
     {
-        cout<<"Ukupan broj intrukotra je: "<<Instruktor::BrojINS<<endl;
-        cout<<"Ukupan broj skijasa je: "<<Skijas::BrojSkijasa<<endl;
-        cout<<"Ukupan broj casova je: "<<Cas::BrojCasova<<endl<<endl;
+        cout<<"Ukupan broj intrukotra je: "<<SviInstruktori.size()<<endl;
+        cout<<"Ukupan broj skijasa je: "<<SviSkijasi.size()<<endl;
+        cout<<"Ukupan broj casova je: "<<SviCasovi.size()<<endl<<endl;
         cout<<"Da dodate novog skijasa unesite 1"<<endl;
         cout<<"Da dodate novog intruktora unesite 2"<<endl;
         cout<<"Da ispisete sve skijase unesite 3"<<endl;
         cout<<"Da ispisete sve instrktore unesite 4"<<endl;
         cout<<"Da izbrisete skijasa unesite 5"<<endl;
         cout<<"Da izbrisete instruktora unesite 6"<<endl;
-        cout<<"Da uðete u cas meni unesite 7"<<endl;
+        cout<<"Da udete u cas meni unesite 7"<<endl;
+        cout<<z.getID()<<endl;
+        cout<<"Staticko polje je "<<z.getBrojSkijasa()<<endl;
+        cout<<"ID za ivana je "<<SviSkijasi.begin()->getID()<<endl;
 
 
 
@@ -149,7 +150,8 @@ int main()
             system("cls");
             for(auto ik=SviSkijasi.begin(); ik!=SviSkijasi.end(); ik++)
             {
-                cout<<endl<<endl<<endl<<endl<<endl;
+                cout<<endl;
+                cout<<"ID je"<<ik->getID()<<endl;
                 ik->JaSam();
             }
         }
@@ -171,7 +173,7 @@ int main()
                 if(ik->getIme()==a)
                 {
                     SviSkijasi.erase(ik);
-                    Skijas::BrojSkijasa--;
+
                     break;
                 }
 
@@ -200,7 +202,10 @@ int main()
 
             do
             {
+                cout<<"Da se vratite na prethodni meni pritisnite 0"<<endl;
                 cout<<"Da dodate novi cas 1"<<endl;
+                cout<<"Da ispisete sve casove pritisnite 2"<<endl;
+                cout<<"Da promenite vreme casa unesite 3"<<endl;
 
 
                 cin>>k;
@@ -208,14 +213,24 @@ int main()
                 {
 
                     system("cls");
+                    for(auto ik=SviSkijasi.begin(); ik!=SviSkijasi.end(); ik++)
+                    {
+                        cout<<endl<<endl<<endl<<endl<<endl;
+                        ik->JaSam();
+                    }
                     cout<<"Unesite ime skijasa koji zeli da doda cas"<<endl;
                     string a,b;
                     cin>>a;
+                    for(auto ik=SviInstruktori.begin(); ik!=SviInstruktori.end(); ik++)
+                    {
+                        cout<<endl;
+                        ik->JaSam();
+                    }
                     cout<<"Unesite ime instruktora koji ce da odrzi cas"<<endl;
                     cin>>b;
 
                     auto ik=SviSkijasi.begin();
-                    for(ik=SviSkijasi.begin(); ik!=SviSkijasi.end(); ik++)
+                    for(ik; ik!=SviSkijasi.end(); ik++)
                     {
                         if(ik->getIme()==a)
                         {
@@ -231,7 +246,39 @@ int main()
                             break;
                         }
                     }
-                    NoviCas(*ip,*ik);
+                    SviCasovi.push_back(NoviCas(*ip,*ik));
+                }
+                if(k==2)
+                {
+                    system("cls");
+                    for(auto ik=SviCasovi.begin(); ik!=SviCasovi.end(); ik++)
+                    {
+                        cout<<endl<<endl<<endl<<endl<<endl;
+                        ik->ispisiCas();
+                    }
+                }
+                if(k==3)
+                {
+                    int a,b;
+                    cout<<"Unesite prvo Id instukotra koji drzi cas pa skijasa koji dolazi na cas"<<endl;
+                    cin>>a;
+                    cin>>b;
+                    for(auto ik=SviCasovi.begin(); ik!=SviCasovi.end(); ik++)
+                    {
+                        if(ik->getIDinstukotra()==a && ik->getIDskijasa()==b)
+                        {
+                            int k,o;
+                            cout<<"Trenutno vreme: "<<endl;
+                            cout<<ik->getVreme()<<endl;
+                            cout<<"Unesite vreme novog casa"<<endl;
+                            cin>>k>>o;
+                            Vreme p(k,o);
+                            ik->setOV(p);
+                            break;
+
+                        }
+
+                    }
                 }
             }
             while(k!=0);
