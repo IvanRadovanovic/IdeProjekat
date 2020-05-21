@@ -112,8 +112,9 @@ int main()
     vector<Instruktor> SviInstruktori;
     vector<Skijas> SviSkijasi;
     vector<Cas> SviCasovi;
-    Skijas z("Ivan","Radovanovic",d,d,Skijas2);
+    Skijas z("Ivan","Radovanovic",d,d,Skijas2);//ODAVDE
     SviSkijasi.push_back(z);
+    cout<<"ID za ivana je 321//"<<SviSkijasi.begin()->getID()<<endl;
     SviInstruktori.push_back(inst);
     int k;
     do
@@ -130,7 +131,7 @@ int main()
         cout<<"Da udete u cas meni unesite 7"<<endl;
         cout<<z.getID()<<endl;
         cout<<"Staticko polje je "<<z.getBrojSkijasa()<<endl;
-        cout<<"ID za ivana je "<<SviSkijasi.begin()->getID()<<endl;
+        cout<<"ID za ivana je "<<*(SviSkijasi.begin())<<endl;//DO OVDE SE PROMENI
 
 
 
