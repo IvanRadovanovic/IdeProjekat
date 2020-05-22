@@ -35,6 +35,7 @@
 		<Unit filename="Cas.hpp" />
 		<Unit filename="Datum.hpp" />
 		<Unit filename="FajlCasovi.txt" />
+		<Unit filename="FajlSkijasi.txt" />
 		<Unit filename="Instruktor.hpp" />
 		<Unit filename="Osoba.hpp" />
 		<Unit filename="Radnik.hpp" />
