@@ -1,4 +1,2 @@
-Ime: Miroljub    Prezime: Petrovic
- 0
 Ime: Ivan    Prezime: Radovanovic
  0

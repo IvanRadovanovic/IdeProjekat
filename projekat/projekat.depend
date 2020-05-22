@@ -32,7 +32,7 @@
 1586964630 c:\users\ivan\desktop\projekat\skipass.hpp
 	"Datum.hpp"
 
-1590178162 source:c:\users\ivan\documents\github\ideprojekat\projekat\main.cpp
+1590185172 source:c:\users\ivan\documents\github\ideprojekat\projekat\main.cpp
 	<iostream>
 	"Datum.hpp"
 	"Instruktor.hpp"
@@ -44,18 +44,19 @@
 	"Vreme.hpp"
 	<fstream>
 	<vector>
+	<algorithm>
 
 1590174581 c:\users\ivan\documents\github\ideprojekat\projekat\datum.hpp
 	<string>
 
-1590176701 c:\users\ivan\documents\github\ideprojekat\projekat\instruktor.hpp
+1590181275 c:\users\ivan\documents\github\ideprojekat\projekat\instruktor.hpp
 	"Osoba.hpp"
 	"Skipass.hpp"
 	"Skijas.hpp"
 	<iostream>
 	<vector>
 
-1590178353 c:\users\ivan\documents\github\ideprojekat\projekat\osoba.hpp
+1590181275 c:\users\ivan\documents\github\ideprojekat\projekat\osoba.hpp
 	<iostream>
 	"Cas.hpp"
 

@@ -11,6 +11,37 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+void UlazniTxt(string nazivFajla,vector<Skijas*> *SviSkijasi,vector<Instruktor*> *SviInstruktori)
+{
+    string linija;
+    ifstream fajl (nazivFajla);
+    if (fajl.is_open())
+    {
+            string Ime,Prezime;
+            char k;
+            while(!fajl.eof())
+            {
+                fajl>>Ime>>Prezime>>k;
+                if(fajl.eof())
+                    break;
+                if(k=='s'){
+                    Datum b;
+                    Skijas *s=new Skijas(Ime,Prezime,b,b,Skijas2);
+                    SviSkijasi->push_back(s);
+                }
+                if(k=='i'){
+                    Datum b;
+                    Instruktor *i=new Instruktor(Ime,Prezime,b,b);
+                    SviInstruktori->push_back(i);
+                }
+            }
+            fajl.close();
+    }
+    else
+        {
+            cout << "Ne mogu da citam" << nazivFajla << endl;
+        }
+}
 void citajTxt(string nazivFajla)
 {
     string linija;
@@ -28,13 +59,15 @@ void citajTxt(string nazivFajla)
         cout << "Neuspesno otvoren fajl";
 
 }
-    void pisiTxt(string nazivFajla, Osoba &o, char mode='a')
+void pisiTxt(string nazivFajla, Osoba &o, char mode='a')
 {
     ofstream fajl;
-    if (mode=='a'){
+    if (mode=='a')
+    {
         fajl.open (nazivFajla, ios_base::app);
     }
-    else{
+    else
+    {
         fajl.open (nazivFajla);
     }
     fajl << o << " ";
@@ -45,10 +78,12 @@ void citajTxt(string nazivFajla)
 void pisiTxtCasovi(string nazivFajla, Cas &o, char mode='a')
 {
     ofstream fajl;
-    if (mode=='a'){
+    if (mode=='a')
+    {
         fajl.open (nazivFajla, ios_base::app);
     }
-    else{
+    else
+    {
         fajl.open (nazivFajla);
     }
     fajl << o << endl;;
@@ -108,19 +143,21 @@ int Skijas::BrojSkijasa=0;
 int main()
 {
     //citajTxt();
-    Osoba i("Miroljub","Petrovic");
-    Instruktor inst(i);
-    Datum d(6,1,2021);
+
 
     vector<Instruktor*> SviInstruktori;
     vector<Skijas*> SviSkijasi;
     vector<Cas*> SviCasovi;
+    /*Osoba i("Miroljub","Petrovic");
+    Instruktor inst(i);
+    Datum d(6,1,2021);
     Skijas z("Ivan","Radovanovic",d,d,Skijas2);
     SviSkijasi.push_back(&z);
-    SviInstruktori.push_back(&inst);
+    SviInstruktori.push_back(&inst);*/
     //inst.NoviCas(&inst,&z,d,v);
     //inst.NoviCas(&inst,&z,p,v);
     //inst.MojiCasovi();
+    UlazniTxt("Ulaz.txt",&SviSkijasi,&SviInstruktori);///Probao sam
     int k;
     do
     {
@@ -378,43 +415,51 @@ int main()
     }
     while(k!=-1);
     vector<Osoba*> SveOsobe;
-	SveOsobe.insert(SveOsobe.end(), SviInstruktori.begin(), SviInstruktori.end());
-	SveOsobe.insert(SveOsobe.end(), SviSkijasi.begin(), SviSkijasi.end());
-	for(auto ik=SveOsobe.begin(); ik!=SveOsobe.end(); ik++)
-            {
-                if(ik==SveOsobe.begin()){
-                    pisiTxt("FajlOsobe.txt",**ik,'w');
-                }
-                else{
-                    pisiTxt("FajlOsobe.txt",**ik);
-                }
-            }
+    SveOsobe.insert(SveOsobe.end(), SviInstruktori.begin(), SviInstruktori.end());
+    SveOsobe.insert(SveOsobe.end(), SviSkijasi.begin(), SviSkijasi.end());
+    for(auto ik=SveOsobe.begin(); ik!=SveOsobe.end(); ik++)
+    {
+        if(ik==SveOsobe.begin())
+        {
+            pisiTxt("FajlOsobe.txt",**ik,'w');
+        }
+        else
+        {
+            pisiTxt("FajlOsobe.txt",**ik);
+        }
+    }
     for(auto ik=SviSkijasi.begin(); ik!=SviSkijasi.end(); ik++)
-            {
-                if(ik==SviSkijasi.begin()){
-                    pisiTxt("FajlSkijasi.txt",**ik,'w');
-                }
-                else{
-                    pisiTxt("FajlSkijasi.txt",**ik);
-                }
-            }
+    {
+        if(ik==SviSkijasi.begin())
+        {
+            pisiTxt("FajlSkijasi.txt",**ik,'w');
+        }
+        else
+        {
+            pisiTxt("FajlSkijasi.txt",**ik);
+        }
+    }
     for(auto ik=SviInstruktori.begin(); ik!=SviInstruktori.end(); ik++)
-            {
-                if(ik==SviInstruktori.begin()){
-                    pisiTxt("FajlInstruktori.txt",**ik,'w');
-                }
-                else{
-                    pisiTxt("FajlInstruktori.txt",**ik);
-                }
-            }
+    {
+        if(ik==SviInstruktori.begin())
+        {
+            pisiTxt("FajlInstruktori.txt",**ik,'w');
+        }
+        else
+        {
+            pisiTxt("FajlInstruktori.txt",**ik);
+        }
+    }
     for(auto ik=SviCasovi.begin(); ik!=SviCasovi.end(); ik++)
-            {
-                if(ik==SviCasovi.begin()){
-                    pisiTxtCasovi("FajlCasovi.txt",**ik,'w');
-                }
-                else{
-                    pisiTxtCasovi("FajlCasovi.txt",**ik);
-                }
-            }
+    {
+        if(ik==SviCasovi.begin())
+        {
+            pisiTxtCasovi("FajlCasovi.txt",**ik,'w');
+        }
+        else
+        {
+            pisiTxtCasovi("FajlCasovi.txt",**ik);
+        }
+    }
     return 0;
 }
