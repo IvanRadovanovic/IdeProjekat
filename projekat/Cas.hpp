@@ -17,8 +17,8 @@ protected:
     int idUCenik;
     Vreme OdrzavanjeVreme;
     int idCasa;
-public:
     static int BrojCasova;
+public:
     Cas():OdrzavanjeDan(), OdrzavanjeVreme()
     {
         idCasa=BrojCasova;
@@ -29,7 +29,7 @@ public:
         idCasa=BrojCasova;
         BrojCasova++;
     }
-    Cas(const Cas& a): idINS(a.idINS),idUCenik(a.idUCenik),OdrzavanjeVreme(a.OdrzavanjeVreme)
+    Cas(const Cas& a): idINS(a.idINS),idUCenik(a.idUCenik),OdrzavanjeVreme(a.OdrzavanjeVreme),OdrzavanjeDan(a.OdrzavanjeDan)
     {
         idCasa=BrojCasova;
     }
@@ -37,6 +37,10 @@ public:
     void setOV(Vreme a)
     {
         OdrzavanjeVreme=a;
+    }
+    void setDatum(Datum a)
+    {
+        OdrzavanjeDan=a;
     }
     void ispisiCas ()const
     {
@@ -46,6 +50,7 @@ public:
         OdrzavanjeVreme.Ispisi();
         cout<<endl;
     }
+    Datum getDatum (){return OdrzavanjeDan;}
     int getIDinstukotra (){return idINS;}
     int getIDskijasa (){return idUCenik;}
     Vreme getVreme (){return OdrzavanjeVreme;}
@@ -55,7 +60,7 @@ public:
 ostream& operator<<(ostream& izlaz, const Cas& o)
 {
 
-    izlaz<<endl<<endl;
+    izlaz<<endl;
 
     izlaz<<"Cas - ispis"<<endl;
 
@@ -67,7 +72,7 @@ ostream& operator<<(ostream& izlaz, const Cas& o)
 
     izlaz<<o.OdrzavanjeVreme<<endl;
 
-    izlaz<<"Radni broj casa "<<o.idCasa<<endl<<endl;
+    izlaz<<"Radni broj casa "<<o.idCasa<<endl;
 
     return izlaz;
 

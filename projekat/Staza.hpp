@@ -10,6 +10,7 @@ class Staza
 protected:
     string Naziv;
     TezinaStaze TStaze;
-
+public:
+    Staza():Naziv("staza bez naziva"),TStaze(){}
 };
 #endif // STAZA_HPP_INCLUDED

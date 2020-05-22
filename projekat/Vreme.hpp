@@ -26,6 +26,9 @@ public:
     {
         cout<<sat<<"|"<<minut<<"|";
     }
+    int poredenje (){
+         return (sat*100+minut*10000);
+    }
     friend ostream& operator<<(ostream& izlaz, const Vreme& o);
 };
 
@@ -36,7 +39,7 @@ ostream& operator<<(ostream& izlaz, const Vreme& o)
 
     izlaz<<"Sat: "<<o.sat<<endl;
 
-    izlaz<<"Minut:"<<o.minut<<endl<<endl;
+    izlaz<<"Minut:"<<o.minut<<endl;
 
     return izlaz;
 

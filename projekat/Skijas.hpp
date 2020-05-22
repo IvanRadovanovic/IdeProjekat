@@ -30,9 +30,7 @@ public:
     Skijas(string ime1, string prezime1,Datum PSP, Datum KSP, Oprema o1):Osoba(ime1, prezime1), SkijasPass(PSP,KSP), Vrsta(o1)
     {
         brojCas=0;
-        cout<<"Pravim novog skijasa i trenutno je staticko polje "<<BrojSkijasa<<endl;
         IDS=BrojSkijasa;
-        cout<<"Pravim novog skijasa i trenutno je IDS "<<IDS<<endl;
         BrojSkijasa++;
 
     }
@@ -67,11 +65,11 @@ public:
         cout<<" Ukupan broj casova"<<brojCas<<endl;
         cout<<"-------------------------"<<endl<<endl;
     }
-    void Mojicasovi()
+    void MojiCasovi()
     {
         for(auto ik=SkiCas.begin(); ik!=SkiCas.end(); ik++)
         {
-            cout<<*ik<<endl;
+            ik->ispisiCas();
         }
 
     }

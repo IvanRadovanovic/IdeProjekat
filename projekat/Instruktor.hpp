@@ -15,8 +15,8 @@ protected:
     vector<Cas> InsCasovi;
     int broj;
     int IDinstruktora;
-public:
     static int BrojINS;
+public:
     Instruktor():Osoba(),InstruktorPass()
     {
         broj=0;
@@ -35,13 +35,14 @@ public:
         IDinstruktora=BrojINS;
         BrojINS++;
     }
-    Cas NoviCas(Instruktor &INS,Skijas &UC,Datum &OD,Vreme &OV)
+    Instruktor(Instruktor &a): InstruktorPass(a.InstruktorPass),InsCasovi(a.InsCasovi),broj(a.broj),IDinstruktora(a.IDinstruktora){}
+    Cas NoviCas(Instruktor *INS,Skijas *UC,Datum &OD,Vreme &OV)
     {
-        Cas c(INS.getIDINS(),UC.getID(),OD,OV);
-        UC.ZakazivanjeCasa(c);
-        InsCasovi.push_back(c);
-        broj++;
-        cout<<"Ovde se pravi novi cas XXX"<<INS.getIDINS()<<"  "<<UC.getID()<<"////////"<<endl;
+        Cas c(INS->getID(),UC->getID(),OD,OV);
+        INS->PovecanjeBrojaCasa(*INS);
+        INS->DodavanjeCasa(c,INS);
+        UC->ZakazivanjeCasa(c);
+
         return c;
     }
     void PromeniVremeCasa(Vreme& v)
@@ -51,7 +52,14 @@ public:
         cin>>k;
         InsCasovi[k].setOV(v);
     }
-    int getIDINS ()
+    void PromeniDatumCasa(Datum& d)
+    {
+        int k;
+        cout<<"Redni broj casa"<<endl;
+        cin>>k;
+        InsCasovi[k].setDatum(d);
+    }
+    int getID ()
     {
         return IDinstruktora;
     }
@@ -64,9 +72,17 @@ public:
     {
         for(auto ik=InsCasovi.begin(); ik!=InsCasovi.end(); ik++)
         {
-            cout<<*ik<<endl;
+             ik->ispisiCas();
         }
 
+    }
+    void DodavanjeCasa (Cas c, Instruktor *INS){
+        INS->InsCasovi.push_back(c);
+        INS->BrojINS++;
+    }
+    void PovecanjeBrojaCasa (Instruktor &a)
+    {
+        a.broj++;
     }
     ~Instruktor(){BrojINS--;}
 
@@ -80,7 +96,7 @@ ostream& operator<<(ostream& izlaz, const Instruktor& o)
 
     izlaz<<endl<<endl;
 
-    cout<<"Redni broj "<<o.IDinstruktora<<endl<<"Moje ime je: "<<o.ime<<" "<<o.prezime<<endl;
+    cout<<"ID "<<o.IDinstruktora<<endl<<"Moje ime je: "<<o.ime<<" "<<o.prezime<<endl;
     cout<<"i ukupan broj casova mi je:"<<o.broj<<endl;
     cout<<endl<<"---------------------------"<<endl<<endl;
 

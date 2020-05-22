@@ -12,7 +12,8 @@ class Radnik:public Osoba
 protected:
     Skipass zaposleniPass;
     Staza RadnoMesto;
-
+public:
+    Radnik(): Osoba(), RadnoMesto(){}
 };
 
 

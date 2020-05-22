@@ -42,7 +42,18 @@ public:
     {
         cout<<"Moje ime je: "<<ime<<" "<<prezime<<endl;
     }
+    virtual int getID(){return -1;}
 
+
+friend ostream& operator<<(ostream& izlaz, const Osoba& o);
 
 };
+ostream& operator<<(ostream& izlaz, const Osoba& o)
+{
+
+    izlaz<<"Ime: "<<o.ime<<"    Prezime: "<<o.prezime<<endl;
+
+    return izlaz;
+
+}
 #endif // OSOBA_HPP_INCLUDED

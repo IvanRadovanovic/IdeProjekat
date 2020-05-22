@@ -1,6 +1,6 @@
 #ifndef DATUM_HPP_INCLUDED
 #define DATUM_HPP_INCLUDED
-
+#include <string>
 using namespace std;
 
 class Datum
@@ -10,20 +10,14 @@ protected:
     int mesec;
     int godina;
 public:
-    Datum()
-    {
-        dan=3;
-        mesec=12;
-        godina=2020;
-    }
-    Datum(int dan1, int mesec1,int godina1)
+    Datum(int dan1=3, int mesec1=12,int godina1=2020)
     {
         dan=dan1;
         mesec=mesec1;
         godina=godina1;
 
     }
-    Datum(const Datum &a) : Datum(a.dan, a.mesec, a.godina) {}
+    Datum(const Datum &a) : dan(a.dan),mesec(a.mesec),godina(a.godina) {}
 
     int getDan()const
     {
@@ -74,6 +68,9 @@ public:
     {
         cout<<dan<<"."<<mesec<<"."<<godina<<"."<<endl;
     }
+    int poredenje (){
+        return (godina*10000+mesec*1000000+dan*100000000);
+    }
     friend ostream& operator<<(ostream& izlaz, const Datum& o);
 };
 ostream& operator<<(ostream& izlaz, const Datum& o)
@@ -85,7 +82,7 @@ ostream& operator<<(ostream& izlaz, const Datum& o)
 
     izlaz<<"Mesec: "<<o.mesec<<endl;
 
-    izlaz<<"Godina:"<<o.godina<<endl<<endl;
+    izlaz<<"Godina:"<<o.godina<<endl;
 
     return izlaz;
 

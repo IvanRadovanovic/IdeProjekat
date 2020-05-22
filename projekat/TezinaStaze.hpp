@@ -11,7 +11,8 @@ protected:
     BojaStaze Boja1;
     int Duzina;
     int nagib;
-
+public:
+    TezinaStaze():Boja1(Zelena),Duzina(200),nagib(10){}
 
 };
 
