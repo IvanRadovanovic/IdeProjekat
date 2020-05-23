@@ -35,6 +35,8 @@
 		<Unit filename="Cas.hpp" />
 		<Unit filename="Datum.hpp" />
 		<Unit filename="FajlCasovi.txt" />
+		<Unit filename="FajlInstruktori.txt" />
+		<Unit filename="FajlOsobe.txt" />
 		<Unit filename="FajlSkijasi.txt" />
 		<Unit filename="Instruktor.hpp" />
 		<Unit filename="Osoba.hpp" />
@@ -43,6 +45,7 @@
 		<Unit filename="Skipass.hpp" />
 		<Unit filename="Staza.hpp" />
 		<Unit filename="TezinaStaze.hpp" />
+		<Unit filename="Ulaz.txt" />
 		<Unit filename="Vreme.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
