@@ -73,6 +73,26 @@ public:
         }
 
     }
+    void MenjaVreme (Vreme p,Cas c){
+        for(auto ik=SkiCas.begin();ik!=SkiCas.end();ik++){
+            if(c.getDatum().poredenje()==ik->getDatum().poredenje() && c.getVreme().poredenje()==ik->getVreme().poredenje() && c.getIDinstukotra()==ik->getIDinstukotra() && c.getIDskijasa()==ik->getIDskijasa())
+            {
+                ik->setOV(p);
+            }
+
+        }
+
+    }
+     void MenjaDatum (Datum p,Cas c){
+        for(auto ik=SkiCas.begin();ik!=SkiCas.end();ik++){
+            if(c.getDatum().poredenje()==ik->getDatum().poredenje() && c.getVreme().poredenje()==ik->getVreme().poredenje() && c.getIDinstukotra()==ik->getIDinstukotra() && c.getIDskijasa()==ik->getIDskijasa())
+            {
+                ik->setDatum(p);
+            }
+
+        }
+
+    }
 friend ostream& operator<<(ostream& izlaz, const Skijas& o);
 
 };

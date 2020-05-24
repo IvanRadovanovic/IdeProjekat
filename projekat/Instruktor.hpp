@@ -85,6 +85,27 @@ public:
         a.broj++;
     }
     ~Instruktor(){BrojINS--;}
+    void MenjaVreme (Vreme p,Cas c){
+        for(auto ik=InsCasovi.begin();ik!=InsCasovi.end();ik++){
+            if(c.getDatum().poredenje()==ik->getDatum().poredenje() && c.getVreme().poredenje()==ik->getVreme().poredenje() && c.getIDinstukotra()==ik->getIDinstukotra() && c.getIDskijasa()==ik->getIDskijasa())
+            {
+                ik->setOV(p);
+            }
+
+        }
+
+    }
+    void MenjaDatum (Datum p,Cas c){
+        for(auto ik=InsCasovi.begin();ik!=InsCasovi.end();ik++){
+            if(c.getDatum().poredenje()==ik->getDatum().poredenje() && c.getVreme().poredenje()==ik->getVreme().poredenje() && c.getIDinstukotra()==ik->getIDinstukotra() && c.getIDskijasa()==ik->getIDskijasa())
+            {
+                ik->setDatum(p);
+            }
+
+        }
+
+    }
+
 
 
 

@@ -5,42 +5,71 @@
 #include "Radnik.hpp"
 #include "Skijas.hpp"
 #include "Staza.hpp"
-#include "Cas.hpp"
 #include "Vreme.hpp"
+#include "Cas.hpp"
 #include <fstream>
 #include <vector>
 #include <algorithm>
 using namespace std;
-void UlazniTxt(string nazivFajla,vector<Skijas*> *SviSkijasi,vector<Instruktor*> *SviInstruktori)
+vector<string> splitSen(string str)
+{
+   string w = "";
+   vector<string> v;
+   for (auto rem : str)
+   {
+       if (rem==',')
+       {
+           v.push_back(w);
+           w="";
+       }
+       else
+       {
+           w=w+rem;
+       }
+   }
+   v.push_back(w);
+
+   return v;
+}
+class Ucitavanje:public Osoba
+{
+private:
+    string a;
+public:
+    Ucitavanje(string ime1,string prezime1,string s):Osoba(ime1,prezime1),a(s){}
+    string gettype(){return a;}
+    string getIme()const
+    {
+        return ime;
+    }
+    string getPrezime()const
+    {
+        return prezime;
+    }
+};
+vector<Ucitavanje> Ulaz(string nazivFajla)
 {
     string linija;
     ifstream fajl (nazivFajla);
+    vector<Ucitavanje> u;
     if (fajl.is_open())
     {
-            string Ime,Prezime;
-            char k;
-            while(!fajl.eof())
-            {
-                fajl>>Ime>>Prezime>>k;
-                if(fajl.eof())
-                    break;
-                if(k=='s'){
-                    Datum b;
-                    Skijas *s=new Skijas(Ime,Prezime,b,b,Skijas2);
-                    SviSkijasi->push_back(s);
-                }
-                if(k=='i'){
-                    Datum b;
-                    Instruktor *i=new Instruktor(Ime,Prezime,b,b);
-                    SviInstruktori->push_back(i);
-                }
-            }
-            fajl.close();
-    }
-    else
+        while ( getline (fajl,linija) )
         {
-            cout << "Ne mogu da citam" << nazivFajla << endl;
+            vector<string> rez;
+            rez = splitSen(linija);
+            Ucitavanje o(rez[0], rez[1], rez[2]);
+            u.push_back(o);
         }
+
+        fajl.close();
+        return u;
+
+    }
+
+    else
+        cout << "Neuspesno otvoren fajl";
+
 }
 void citajTxt(string nazivFajla)
 {
@@ -148,16 +177,20 @@ int main()
     vector<Instruktor*> SviInstruktori;
     vector<Skijas*> SviSkijasi;
     vector<Cas*> SviCasovi;
-    /*Osoba i("Miroljub","Petrovic");
-    Instruktor inst(i);
-    Datum d(6,1,2021);
-    Skijas z("Ivan","Radovanovic",d,d,Skijas2);
-    SviSkijasi.push_back(&z);
-    SviInstruktori.push_back(&inst);*/
-    //inst.NoviCas(&inst,&z,d,v);
-    //inst.NoviCas(&inst,&z,p,v);
-    //inst.MojiCasovi();
-    UlazniTxt("Ulaz.txt",&SviSkijasi,&SviInstruktori);///Probao sam
+    vector<Ucitavanje> a=Ulaz("Ulaz.txt");
+    for(auto ik=a.begin();ik!=a.end();ik++){
+        if(ik->gettype()=="s"){
+            Datum b;
+            Skijas *p=new Skijas(ik->getIme(),ik->getPrezime(),b,b,Skijas2);
+            SviSkijasi.push_back(p);
+        }
+        if(ik->gettype()=="i"){
+            Datum b;
+            Instruktor *i=new Instruktor(ik->getIme(),ik->getPrezime(),b,b);
+            SviInstruktori.push_back(i);
+        }
+
+    }
     int k;
     do
     {
@@ -317,7 +350,7 @@ int main()
                     cin>>b;
 
                     auto ik=SviSkijasi.begin();
-                    for(ik; ik!=SviSkijasi.end(); ik++)
+                    for(ik=ik; ik!=SviSkijasi.end(); ik++)
                     {
                         if((*ik)->getIme()==a)
                         {
@@ -326,7 +359,7 @@ int main()
 
                     }
                     auto ip=SviInstruktori.begin();
-                    for(ip; ip!=SviInstruktori.end(); ip++)
+                    for(ip=ip; ip!=SviInstruktori.end(); ip++)
                     {
                         if((*ip)->getIme()==b)
                         {
@@ -369,6 +402,18 @@ int main()
                             cout<<"Unesite vreme novog casa"<<endl;
                             cin>>k>>o;
                             Vreme p(k,o);
+                            for(auto ip=SviInstruktori.begin();ip!=SviInstruktori.end();ip++)
+                            {
+                                if((*ip)->getID()==a){
+                                    (*ip)->MenjaVreme(p,**ik);
+                                }
+                            }
+                            for(auto ip=SviSkijasi.begin();ip!=SviSkijasi.end();ip++)
+                            {
+                                if((*ip)->getID()==a){
+                                    (*ip)->MenjaVreme(p,**ik);
+                                }
+                            }
                             (*ik)->setOV(p);
 
                             break;
@@ -401,6 +446,18 @@ int main()
                             cout<<"Unesite datum novog casa"<<endl;
                             cin>>d>>m>>g;
                             Datum p(d,m,g);
+                            for(auto ip=SviInstruktori.begin();ip!=SviInstruktori.end();ip++)
+                            {
+                                if((*ip)->getID()==a){
+                                    (*ip)->MenjaDatum(p,**ik);
+                                }
+                            }
+                            for(auto ip=SviSkijasi.begin();ip!=SviSkijasi.end();ip++)
+                            {
+                                if((*ip)->getID()==a){
+                                    (*ip)->MenjaDatum(p,**ik);
+                                }
+                            }
                             (*ik)->setDatum(p);
                             break;
                         }
