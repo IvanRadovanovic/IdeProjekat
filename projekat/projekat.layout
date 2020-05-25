@@ -2,58 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Datum.hpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+	<File name="Radnik.hpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1390" topLine="50" />
+			<Cursor1 position="254" topLine="0" />
 		</Cursor>
-	</File>
-	<File name="Osoba.hpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="9" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="139" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="Staza.hpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="240" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="TezinaStaze.hpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="295" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1383" topLine="38" />
-		</Cursor>
-		<Folding>
-			<Collapse line="14" />
-			<Collapse line="74" />
-			<Collapse line="91" />
-			<Collapse line="107" />
-			<Collapse line="122" />
-			<Collapse line="135" />
-			<Collapse line="148" />
-			<Collapse line="215" />
-			<Collapse line="220" />
-			<Collapse line="225" />
-			<Collapse line="234" />
-			<Collapse line="243" />
-			<Collapse line="260" />
-			<Collapse line="276" />
-			<Collapse line="297" />
-			<Collapse line="371" />
-			<Collapse line="380" />
-		</Folding>
 	</File>
 	<File name="FajlOsobe.txt" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Ulaz.txt" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="39" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Instruktor.hpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
@@ -64,27 +20,11 @@
 			<Collapse line="20" />
 			<Collapse line="26" />
 			<Collapse line="32" />
-			<Collapse line="48" />
-			<Collapse line="55" />
-			<Collapse line="62" />
-			<Collapse line="66" />
-			<Collapse line="71" />
-			<Collapse line="78" />
 		</Folding>
-	</File>
-	<File name="Vreme.hpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="533" topLine="7" />
-		</Cursor>
 	</File>
 	<File name="Skijas.hpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="389" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="FajlInstruktori.txt" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Cas.hpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
@@ -92,9 +32,14 @@
 			<Cursor1 position="633" topLine="20" />
 		</Cursor>
 	</File>
-	<File name="FajlSkijasi.txt" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="FajlInstruktori.txt" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Skipass.hpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="9" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="220" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="FajlCasovi.txt" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -102,14 +47,52 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Radnik.hpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
+	<File name="FajlSkijasi.txt" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="254" topLine="0" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Skipass.hpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="9" zoom_2="0">
+	<File name="Staza.hpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="220" topLine="0" />
+			<Cursor1 position="240" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Ulaz.txt" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="12" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="18" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="TezinaStaze.hpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="295" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Vreme.hpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="533" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="641" topLine="111" />
+		</Cursor>
+		<Folding>
+			<Collapse line="74" />
+			<Collapse line="91" />
+			<Collapse line="107" />
+			<Collapse line="122" />
+			<Collapse line="135" />
+			<Collapse line="148" />
+		</Folding>
+	</File>
+	<File name="Datum.hpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1390" topLine="50" />
+		</Cursor>
+	</File>
+	<File name="Osoba.hpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="9" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="139" topLine="21" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
